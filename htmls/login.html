@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Arabes</title>
+  <link rel="stylesheet" href="../login.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  
+  <!-- Archivo JS -->
+  <script src="../javas/login.js" defer></script>
+  <script src="../javas/.js" defer></script>
+  <script src="../javas/.js" defer></script>
+  <script src="../javas/.js" defer></script>
+  <script src="../javas/.js" defer></script>
+</head>
+<body>
+  <video autoplay muted loop id="background-video">
+    <source src="../login.mov" type="video/mp4">
+    Tu navegador no admite video de fondo.
+  </video>
+
+  <div class="wrapper">
+    <!-- Registro -->
+    <div id="register-section">
+      <h1>Registrarse</h1>
+      <form id="register-form">
+        <div class="input-box">
+          <input type="text" id="nombre_completo" placeholder="Nombre Completo" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="email" id="emailreg" placeholder="Correo Electrónico" required>
+          <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="passwordreg" placeholder="Contraseña" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <button type="button" id="registro" class="btn">Registrarse</button>
+      </form>
+      <div class="register-link">
+        <p>¿Ya tienes una cuenta? <a href="#" onclick="showLoginForm()">Inicia Sesión</a></p>
+      </div>
+    </div>
+
+    <!-- Login -->
+    <div id="login-section" style="display: none;">
+      <h1>Login</h1>
+      <form id="login-form">
+        <div class="input-box">
+          <input type="email" id="emaillogin" placeholder="Correo Electrónico" required>
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <input type="password" id="passwordlogin" placeholder="Contraseña" required>
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <button type="button" id="login" class="btn">Login</button>
+        <div class="register-link">
+          <p>¿No tienes cuenta? <a href="#" onclick="showRegisterForm()">Registrar</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

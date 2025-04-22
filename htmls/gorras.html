@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorras - Arabe Sport</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="menuContainer">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="../fotos/logo.png" alt="Logo"></a>
+                    <span>Arabe Sport</span>
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Buscar..." class="searchInput">
+                    <img src="../fotos/search.png" width="20" height="20" alt="Ícono de búsqueda" class="searchIcon">
+                </div>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#">Ropa</a>
+                        <ul class="dropdown">
+                            <li><a href="polos.html">T-shirt</a></li>
+                            <li><a href="pantalones.html">Pantalones</a></li>
+                            <li><a href="chaque.html">Chaquetas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gorras.html">Gorras</a></li>
+                    <li><a href="tenis.html">Tenis</a></li>
+                    <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li>
+                      <a href="#cart" class="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+  <!-- Contenedor para las cartas -->
+
+
+      <!-- Cart Overlay -->
+      <div class="cart-overlay">
+          <div class="cart">
+              <div class="cart-header">
+                  <h2>Carrito de Compras</h2>
+                  <button class="cart-close">&times;</button>
+              </div>
+              <div class="cart-items">
+                  <!-- Cart items will be dynamically added here -->
+              </div>
+              <div class="cart-summary">
+                  <div class="cart-total-container">
+                      <span>Total:</span>
+                      <span class="cart-total">$0.00</span>
+                  </div>
+                  <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+              </div>
+          </div>
+      </div>
+
+
+
+  
+
+  <!-- Modal de Detalles -->
+  <section id="product-details" class="hidden" onclick="closeModal(event)">
+   <div class="details-container" onclick="event.stopPropagation();">
+     <button id="close-details" class="close-button">X</button>
+
+     <div class="details-image">
+       <div class="carousel-container">
+         <button class="carousel-button prev-button" onclick="moveCarousel(-1)">
+           <i class="fas fa-chevron-left"></i>
+         </button>
+
+         <div class="carousel-track-container">
+           <div class="carousel-track" id="product-carousel"></div>
+         </div>
+
+         <button class="carousel-button next-button" onclick="moveCarousel(1)">
+           <i class="fas fa-chevron-right"></i>
+         </button>
+       </div>
+       <div class="carousel-nav" id="carousel-indicators"></div>
+     </div>
+
+     <div class="details-info">
+       <h2 id="details-name"></h2>
+       <p id="details-price"></p>
+       <p id="details-description" class="product-description"></p>
+       <div id="details-sizes">
+         <h4>Tamaños:</h4>
+         <div class="size-options">
+           <button class="size-button">S</button>
+           <button class="size-button">M</button>
+           <button class="size-button">L</button>
+           <button class="size-button">XL</button>
+         </div>
+       </div>
+       <button id="add-to-cart" class="add-to-cart-button">Agregar al carrito</button>
+     </div>
+   </div>
+ </section>
+
+
+  <!-- Contenedor de los productos -->
+  <div class="product-container">
+
+   <div class="card-product" 
+   data-id="polo1"
+   data-name="Tampa Bay Rays" 
+   data-price="$1,000" 
+   data-description="Gorra marrón de los Tampa Bay Rays con parches que celebran su historia en la Serie Mundial."
+   data-image="../fotos/gorras/primera2.jpeg"
+   data-images="../fotos/gorras/primera1.jpeg,../fotos/gorras/primera2.jpeg,../fotos/gorras/primera3.jpeg"
+   data-sizes="S (54-56cm), L (60-62cm)">  <!-- Nuevo atributo data-sizes -->
+   <div class="container-img">
+
+      <img class="hover-img" 
+           src="../fotos/gorras/primera2.jpeg" 
+           alt="Tampa Bay Rays"
+           onmouseover="this.src='../fotos/gorras/primera3.jpeg'" 
+           onmouseout="this.src='../fotos/gorras/primera2.jpeg'">
+   </div>
+   <div class="content-card-product">
+      <h3>Tampa Bay Rays</h3>
+      <p class="price">$1,000</p>
+      <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+   </div>
+ </div>
+
+
+
+
+
+
+<!-- Producto 2 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="Polo Negro" 
+  data-price="$12.00" 
+  data-description="Polo negro con un ajuste cómodo y elegante."
+  data-images="../fotos/gorras/segunda1.jpeg,../fotos/gorras/segunda2.jpeg,../fotos/gorras/segunda3.jpeg"
+  data-sizes="S (54-56cm), L (60-62cm)"> 
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/segunda1.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/gorras/segunda3.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/segunda1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Polo Negro</h3>
+  
+   <p class="price">$1,200</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- Producto 3 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="Chicago White Sox" 
+  data-price="$12.00" 
+  data-description="Gorra celeste de los Chicago White Sox conmemorando sus participaciones en la Serie Mundial."
+  data-images="../fotos/gorras/tercera1.jpeg,../fotos/gorras/tercera2.jpeg,../fotos/gorras/terccera3.jpeg"
+
+  data-sizes="S (54-56cm), L (60-62cm)"> 
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/tercera1.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/gorras/terccera3.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/tercera1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Chicago White Sox</h3>
+
+   <p class="price">$999</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- Producto 4 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="New York Yankees" 
+  data-price="$1,300" 
+  data-description="Gorra color oliva de los New York Yankees con parches que recuerdan sus triunfos en la Serie Mundial."
+  data-images="../fotos/gorras/cuarta1.jpeg,../fotos/gorras/cuarta2.jpeg,../fotos/gorras/cuarta3.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/cuarta1.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/gorras/cuarta3.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/cuarta1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>New York Yankees</h3>
+ 
+   <p class="price">$1,300</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Producto 5 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="New York Yankees Estatua de la Libertad" 
+  data-price="$12.00" 
+  data-description="Gorra azul vibrante de los New York Yankees con un diseño especial de la Estatua de la Libertad."
+  data-images="../fotos/gorras/quinta1.jpeg,../fotos/gorras/quinta2.jpeg,../fotos/gorras/quinta3.jpeg"
+  >
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/quinta1.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/gorras/quinta1.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/quinta3.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>New York Yankees Estatua de la Libertad</h3>
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+<!-- Producto 6 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="Gorra New York Mets" 
+  data-price="$1,200" 
+  data-description="Gorra de los New York Mets con los colores tradicionales del equipo: blanco y naranja."
+  data-images="../fotos/gorras/sexta1.jpeg,../fotos/gorras/sexta2.jpeg,../fotos/gorras/sexta3.jpeg"
+  >
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/sexta1.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/gorras/sexta1.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/sexta3.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Gorra New York Mets</h3>
+
+   <p class="price">$1,200</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 7 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="New York Estilo Camuflaje" 
+  data-price="$1000" 
+  data-description="Gorra con diseño de camuflaje y la leyenda New York, ideal para un look urbano y moderno."
+  data-images="../fotos/gorras/septima1.jpeg,../fotos/gorras/septima2.jpeg,../fotos/gorras/septima3.jpeg"
+  >
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/septima1.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/gorras/septima1.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/septima3.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>New York Estilo Camuflaje</h3>
+   <p class="price">$1000</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+<!-- Producto 8 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="New York Mets Bicolor" 
+  data-price="$15.00" 
+  data-description="Gorra de los New York Mets con un moderno diseño en verde y celeste."
+  data-images="../fotos/gorras/oct1.jpeg,../fotos/gorras/oct2.jpeg,../fotos/gorras/oct3.jpeg"
+  >
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/oct1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/oct2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/oct1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3> New York Mets Bicolor</h3>
+   <p class="price">$1,300</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Producto 9 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="akland Athletics" 
+data-price="$999" 
+data-description="Gorra gris con visera amarilla de los Oakland Athletics, conmemorando sus campeonatos de la Serie Mundial de 1973 y 1974."
+data-images="../fotos/gorras/nove1.jpeg,../fotos/gorras/nove2.jpeg,../fotos/gorras/nove3.jpeg"
+>
+<div class="container-img">
+<img class="hover-img" 
+     src="../fotos/gorras/nove1.jpeg" 
+     alt="Polo Azul"
+     onmouseover="this.src='../fotos/gorras/nove1.jpeg'" 
+     onmouseout="this.src='../fotos/gorras/nove2.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>akland Athletics</h3>
+
+<p class="price">$999</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 10 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="San Diego Padres" 
+data-price="$1,300" 
+data-description="Gorra gris de los San Diego Padres con parches que conmemoran sus aniversarios y la historia del club."
+data-images="../fotos/gorras/deci1.jpeg,../fotos/gorras/deci2.jpeg,../fotos/gorras/deci3.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/gorras/deci1.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/gorras/deci1.jpeg'" 
+  onmouseout="this.src='../fotos/gorras/deci3.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>San Diego Padres</h3>
+<p class="price">$1,300</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+<!-- Producto 11 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="New Era 59FIFTY" 
+data-price="$1,500" 
+data-description="New York Yankees con el icónico logo NY bordado en el frontal."
+data-images="../fotos/gorras/once1.jpeg,../fotos/gorras/once2.jpeg,../fotos/gorras/once3.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/gorras/once1.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/gorras/once1.jpeg'" 
+  onmouseout="this.src='../fotos/gorras/once2.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>New Era 59FIFTY</h3>
+<p class="price">$1,500</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Producto 12 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="Oakland Athletics" 
+data-price="$1,000" 
+data-description=" Gorra negra con visera amarilla de los Oakland Athletics, conmemorando sus títulos de la Serie Mundial de 1973 y 1974."
+data-images="../fotos/gorras/doce1.jpeg,../fotos/gorras/doce2.jpeg,../fotos/gorras/doce3.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/gorras/doce1.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/gorras/doce2.jpeg'" 
+  onmouseout="this.src='../fotos/gorras/doce1.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>Oakland Athletics</h3>
+<p class="price">$1,000</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+<!-- Producto 13 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="Boston Celtics" 
+data-price="$900" 
+data-description="Boston Celtics con múltiples parches distintivos, incluyendo el logo del trébol y un diseño estilizado de BC."
+data-images="../fotos/gorras/trece1.jpeg,../fotos/gorras/trece2.jpeg,../fotos/gorras/terccera3.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/gorras/trece1.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/gorras/trece2.jpeg'" 
+  onmouseout="this.src='../fotos/gorras/trece1.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>Boston Celtics</h3>
+<p class="price">$900</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 14 -->
+<div class="card-product" 
+data-id="polo3"
+data-name=" Toronto Blue Jays" 
+data-price="$15.00" 
+data-description=" Toronto Blue Jays, adornada con varios parches conmemorativos, incluyendo el del Juego de Estrellas de 1991."
+data-images="../fotos/gorras/catorce1.jpeg,../fotos/gorras/catorce2.jpeg,../fotos/gorras/catorce3.jpeg">
+
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/gorras/catorce1.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/gorras/catorce2.jpeg'" 
+  onmouseout="this.src='../fotos/gorras/catorce1.jpeg'">
+</div>
+<div class="content-card-product">
+<h3> Toronto Blue Jays</h3>
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 15 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="St. Louis Cardinals" 
+  data-price="$1,100" 
+  data-description="Gorra negra de los St. Louis Cardinals con parches que celebran sus victorias en la Serie Mundial a lo largo de su historia."
+  data-images="../fotos/gorras/quince1.jpeg,../fotos/gorras/quince2.jpeg,../fotos/gorras/quince3.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/quince1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/quince1.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/quince1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>St. Louis Cardinals</h3>
+   
+   <p class="price">$1,100</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 16 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="Toronto Blue Jays" 
+  data-price="$15.00" 
+  data-description="Toronto Blue Jays con múltiples logos conmemorativos, incluyendo el del Juego de Estrellas de 1991."
+  data-images="../fotos/gorras/dieciseis1.jpeg,../fotos/gorras/dieciseis2.jpeg,../fotos/gorras/dieciseis3.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/dieciseis1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/dieciseis2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/dieciseis1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Toronto Blue Jays</h3>
+
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetails(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 17 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="Chicago White Sox" 
+  data-price="$1,200" 
+  data-description="Gorra negra de los Chicago White Sox conmemorando sus 96 años y sus participaciones en la Serie Mundial, con una visera de diseño camuflado."
+  data-images="../fotos/gorras/diesisiete1.jpeg,../fotos/gorras/diesisiete2.jpeg,../fotos/gorras/diesisiete3.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/diesisiete1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/diesisiete2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/diesisiete1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Chicago White Sox</h3>
+  
+  
+   <p class="price">$1,200</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+<!-- Producto 18 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="Pittsburgh Pirates " 
+  data-price="$1,400" 
+  data-description="Gorra azul de los Pittsburgh Pirates con parches que celebran sus participaciones en la Serie Mundial."
+  data-images="../fotos/gorras/diesiocho1.jpeg,../fotos/gorras/diesiocho2.jpeg,../fotos/gorras/diesiocho3.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/diesiocho1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/diesiocho2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/diesiocho1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Pittsburgh Pirates </h3>
+  
+   <p class="price">$1,400</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 19 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="New York Yankees Campeones" 
+  data-price="$900" 
+  data-description="Gorra marrón de los New York Yankees con el logo en púrpura y bordados de los años en que fueron campeones."
+  data-images="../fotos/gorras/dicinueve1.jpeg,../fotos/gorras/dicinueve2.jpeg,../fotos/gorras/dicinueve3.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/dicinueve1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/dicinueve2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/dicinueve1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>New York Yankees Campeones</h3>
+ 
+   <p class="price">$900</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 20 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="Oakland Athletics" 
+  data-price="$15.00" 
+  data-description="Oakland Athletics con el logo en verde y amarillo, adornada con los años en que el equipo se coronó campeón."
+  data-images="../fotos/gorras/veinte1.jpeg,../fotos/gorras/veinte2.jpeg,../fotos/gorras/veinte3.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/veinte1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/veinte2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/veinte1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Oakland Athletics</h3>
+
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 22 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="Oakland Athletics Verde" 
+  data-price="$15.00" 
+  data-description="Oakland Athletics con el logo en amarillo y verde, conmemorando sus años de campeonato."
+  data-images="../fotos/gorras/veintidos1.jpeg,../fotos/gorras/veintidos2.jpeg,../fotos/gorras/veintidos13.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/veintidos1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/veintidos2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/veintidos1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Oakland Athletics Verde</h3>
+
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 23 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="LA Dodgers Campeonatos Históricos" 
+  data-price="$15.00" 
+  data-description="Gorra de los LA Dodgers en blanco y negro, conmemorando sus años de campeonato."
+  data-images="../fotos/gorras/veintitres1.jpeg,../fotos/gorras/veintitres2.jpeg,../fotos/gorras/veintitres3.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/gorras/veintitres1.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/gorras/veintitres2.jpeg'" 
+        onmouseout="this.src='../fotos/gorras/veintitres1.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>LA Dodgers Campeonatos Históricos</h3>
+ 
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 24  -->
+
+<div class="card-product" 
+data-id="polo3"
+data-name="Polo Azul" 
+data-price="$15.00" 
+data-description="Polo azul con un diseño moderno y estilizado."
+data-image="../fotos/Polos/polo18.jpeg">
+ <div class="container-img">
+    <img class="hover-img" 
+         src="../fotos/Polos/polo18.jpeg" 
+         alt="Polo Azul"
+         onmouseover="this.src='../fotos/Polos/polo1819.jpeg'" 
+         onmouseout="this.src='../fotos/Polos/polo18.jpeg'">
+ </div>
+ <div class="content-card-product">
+    <h3>Polo Azul</h3>
+
+    <p class="price">$15.00</p>
+    <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+   </div>
+ </div>
+  </div>
+
+
+    
+
+
+    
+      
+    
+    
+    
+      <!-- Agrega más productos aquí -->
+
+
+
+
+      <script src="../javas/java.js"></script>
+  
+  <script src="../javas/carrusel.js"></script>
+  <script src="../javas/car.js"></script>
+   
+      <script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+  </body>
+  </html>

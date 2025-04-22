@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil de Usuario</title>
+  <link rel="stylesheet" href="../estilo.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <!-- Importando Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="profile-section">
+        <div class="profile-image">
+          <img id="user-avatar" src="../assets/default-avatar.png" alt="Foto de perfil">
+        </div>
+        <h2 id="user-name">Cargando...</h2>
+        <p id="user-email">Cargando...</p>
+      </div>
+      <div class="menu">
+        <ul>
+          <li class="active"><i class='bx bxs-user'></i> Mi Perfil</li>
+          <li><i class='bx bxs-cog'></i> Configuración</li>
+          <li id="logout-btn"><i class='bx bxs-log-out'></i> Cerrar Sesión</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="main-content">
+      <div class="header">
+        <h1>Mi Perfil</h1>
+      </div>
+      
+      <div class="user-info">
+        <div class="info-card">
+          <h3>Información Personal</h3>
+          <div class="info-item">
+            <label>Nombre Completo:</label>
+            <p id="display-name">Cargando...</p>
+            <button id="edit-name" class="edit-btn"><i class='bx bxs-edit'></i></button>
+          </div>
+          <div class="info-item">
+            <label>Correo Electrónico:</label>
+            <p id="display-email">Cargando...</p>
+          </div>
+          <div class="info-item">
+            <label>Fecha de Registro:</label>
+            <p id="registration-date">Cargando...</p>
+          </div>
+        </div>
+        
+        <div class="info-card">
+          <h3>Mis Datos</h3>
+          <div id="user-data" class="user-data">
+            <!-- Datos adicionales del usuario se cargarán aquí -->
+          </div>
+          <button id="add-data" class="primary-btn">Añadir Información</button>
+        </div>
+      </div>
+      
+      <!-- Modal para editar nombre -->
+      <div id="edit-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Editar Nombre</h3>
+          <input type="text" id="new-name" placeholder="Nuevo nombre completo">
+          <button id="save-name" class="primary-btn">Guardar</button>
+        </div>
+      </div>
+      
+      <!-- Modal para añadir datos -->
+      <div id="add-data-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Añadir Información</h3>
+          <input type="text" id="data-key" placeholder="Título (ej: Teléfono)">
+          <input type="text" id="data-value" placeholder="Valor (ej: 123-456-7890)">
+          <button id="save-data" class="primary-btn">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../javas/users.js"></script>
+</body>
+</html>

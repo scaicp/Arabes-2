@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenis - Arabe Sport</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="menuContainer">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="../fotos/todo/logo.png" alt="Logo"></a>
+                    <span>Arabe Sport</span>
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Buscar..." class="searchInput">
+                    <img src="../fotos/s" width="20" height="20" alt="Ícono de búsqueda" class="searchIcon">
+                </div>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#">Ropa</a>
+                        <ul class="dropdown">
+                            <li><a href="polos.html">T-shirt</a></li>
+                            <li><a href="pantalones.html">Pantalones</a></li>
+                            <li><a href="chaque.html">Chaquetas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gorras.html">Gorras</a></li>
+                    <li><a href="tenis.html">Tenis</a></li>
+                    <li><a href="mas">¡Más Sobre Nosotros!</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li>
+                      <a href="#cart" class="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    
+
+<!-- Contenedor del carrito -->
+<div class="cart-overlay">
+  <div class="cart">
+      <div class="cart-header">
+          <h2>Carrito de Compras</h2>
+          <button class="cart-close">&times;</button>
+      </div>
+      <div class="cart-items">
+          <!-- Los elementos del carrito se agregarán dinámicamente -->
+      </div>
+      <div class="cart-summary">
+          <div class="cart-total-container">
+              <span>Total:</span>
+              <span class="cart-total">$0.00</span>
+          </div>
+          <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+      </div>
+  </div>
+</div>
+
+
+    <!-- Product Container -->
+    <div class="product-container">
+        <!-- Producto 1 -->
+        <div class="card-product" 
+            data-image="../fotos/Tenis/nikenegro.png" 
+            data-name="Tenis Marrones" 
+            data-price="$5.00"
+            data-description="Un par de tenis cómodos y elegantes, ideales para el día a día.">
+            <div class="container-img">
+                <img src="../fotos/Tenis/nikenegro.png" alt="Tenis Marrones">
+            </div>
+            <div class="content-card-product">
+                <h3>Tenis Marrones</h3>
+                <p class="price">$5.00</p>
+                <button class="buy-now" onclick="openModal('marrones')">Ver Detalles</button>
+            </div>
+        </div>
+        
+        <!-- Producto 2 -->
+        <div class="card-product" 
+            data-image="../fotos/Tenis/verdes.png" 
+            data-name="Tenis Verdes"
+            data-price="$6.50"
+            data-description="Tenis de alta calidad con un diseño moderno y elegante, perfectos para cualquier ocasión.">
+            <div class="container-img">
+                <img src="../fotos/Tenis/verdes.png" alt="Tenis Verdes">
+            </div>
+            <div class="content-card-product">
+                <h3>Tenis Verdes</h3>
+                <p class="price">$6.50</p>
+                <button class="buy-now" onclick="openModal('verdes')">Ver Detalles</button>
+
+            </div>
+        </div>
+        
+        <!-- Producto 3 -->
+        <div class="card-product" 
+            data-image="../fotos/Tenis/Rojos.png" 
+            data-name="Tenis Blancos"
+            data-price="$7.00"
+            data-description="Tenis versátiles para cualquier ocasión, con un diseño minimalista y cómodo.">
+            <div class="container-img">
+                <img src="../fotos/Tenis/Rojos.png" alt="Tenis Blancos">
+            </div>
+            <div class="content-card-product">
+                <h3>Tenis Blancos</h3>
+                <p class="price">$7.00</p>
+                <button class="buy-now" onclick="openModal('rojos')">Ver Detalles</button>
+
+            </div>
+        </div>
+        
+        <!-- Producto 4 -->
+        <div class="card-product" 
+            data-image="../fotos/Tenis/nikegroazul.png" 
+            data-name="Tenis Azul"
+            data-price="$8.00"
+            data-description="Tenis modernos con un toque único de color azul, perfectos para resaltar tu estilo.">
+            <div class="container-img">
+                <img src="../fotos/Tenis/nikegroazul.png" alt="Tenis Azul">
+            </div>
+            <div class="content-card-product">
+                <h3>Tenis Azul</h3>
+                <p class="price">$8.00</p>
+                <button class="buy-now" onclick="openModal('azul')">Ver Detalles</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <section id="product-details" class="hidden" onclick="closeModal(event)">
+        <div class="details-container" onclick="event.stopPropagation();">
+            <button id="close-details" class="close-button" onclick="closeModal()">X</button>
+
+            <div class="details-image">
+                <img id="details-image" src="" alt="Imagen del producto">
+            </div>
+
+            <div class="details-info">
+                <h2 id="details-name"></h2>
+                <p id="details-price"></p>
+
+              
+
+                <p id="details-description" class="product-description"></p>
+
+                <div id="details-sizes">
+                    <h4>Tamaños:</h4>
+                    <div class="size-options">
+                        <button class="size-button">6</button>
+                        <button class="size-button">7</button>
+                        <button class="size-button">8</button>
+                        <button class="size-button">9</button>
+                        <button class="size-button">10</button>
+                    </div>
+                </div>
+
+                <button id="add-to-cart" class="add-to-cart-button">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="../javas/java.js"></script>
+    <script src="../javas/car.js"></script>
+    <script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+</body>
+</html>

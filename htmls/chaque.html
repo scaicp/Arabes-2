@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chaquetas - Arabe Sport</title>
+  <link rel="stylesheet" href="../estilo.css" />
+
+  <script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav id="nav">
+      <div class="menuContainer">
+        <div class="nav-logo">
+          <a href="index.html"><img src="../fotos/logo.png" alt="Logo" /></a>
+          <span>Arabe Sport</span>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Buscar..." class="searchInput" />
+          <img src="../fotos/search.png" width="20" height="20" alt="Buscar" class="searchIcon" />
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="polos.html">Ropa</a>
+            <ul class="dropdown">
+              <li><a href="polos.html">T-shirt</a></li>
+              <li><a href="pantalones.html">Pantalones</a></li>
+              <li><a href="chaque.html">Chaquetas</a></li>
+            </ul>
+          </li>
+          <li><a href="gorras.html">Gorras</a></li>
+          <li><a href="tenis.html">Tenis</a></li>
+          <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+          <li><a href="#"><i class="fas fa-user"></i></a></li>
+          <li>
+            <a href="#cart" class="cart-toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<!-- Contenedor de Productos -->
+<div class="product-container" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+  <!-- Producto 1 -->
+  <div class="card-product"
+    data-id="pant1"
+    data-name="Pantalón Deportivo"
+    data-price="$10.00"
+    data-description="Un pantalón deportivo cómodo y elegante, perfecto para cualquier actividad física."
+    data-images="../fotos/pantalones/pant1.jpeg,../fotos/pantalones/pant12.jpeg,../fotos/pantalones/pant13.jpeg">
+
+    <div class="container-img">
+      <img class="hover-img"
+        src="../fotos/pantalones/pant1.jpeg"
+        alt="Pantalón Deportivo"
+        onmouseover="this.src='../fotos/pantalones/pant12.jpeg'"
+        onmouseout="this.src='../fotos/pantalones/pant1.jpeg'" />
+    </div>
+    <div class="content-card-product">
+      <h3>Pantalón Deportivo</h3>
+      <p class="price">$10.00</p>
+      <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+    </div>
+  </div>
+
+  <!-- Producto 2 -->
+  <div class="card-product"
+    data-id="pant2"
+    data-name="Jogger Urbano"
+    data-price="$12.50"
+    data-description="Jogger moderno y versátil ideal para uso diario con estilo."
+    data-images="../fotos/chaquetas/chaque1.jpeg,../fotos/chaquetas/chaque12.jpeg">
+
+    <div class="container-img">
+      <img class="hover-img"
+        src="../fotos/chaquetas/chaque1.jpeg"
+        alt="Jogger Urbano"
+        onmouseover="this.src='../fotos/chaquetas/chaque12.jpeg'"
+        onmouseout="this.src='../fotos/chaquetas/chaque1.jpeg'" />
+    </div>
+    <div class="content-card-product">
+      <h3>Jogger Urbano</h3>
+      <p class="price">$12.50</p>
+      <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+  <!-- Modal de Detalles -->
+  <section id="product-details" class="hidden" onclick="closeModal(event)">
+    <div class="details-container" onclick="event.stopPropagation();">
+      <button id="close-details" class="close-button">X</button>
+
+      <div class="details-image">
+        <div class="carousel-container">
+          <button class="carousel-button prev-button" onclick="moveCarousel(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel-track-container">
+            <div class="carousel-track" id="product-carousel"></div>
+          </div>
+
+          <button class="carousel-button next-button" onclick="moveCarousel(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="carousel-nav" id="carousel-indicators"></div>
+      </div>
+
+      <div class="details-info">
+        <h2 id="details-name"></h2>
+        <p id="details-price"></p>
+        <p id="details-description" class="product-description"></p>
+        <div id="details-sizes">
+          <h4>Tamaños:</h4>
+          <div class="size-options">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
+          </div>
+        </div>
+        <button id="add-to-cart" class="add-to-cart-button">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript separado -->
+  <script src="../javas/carrusel.js"></script>
+  <script src="../javas/car.js"></script>
+</body>
+</html>

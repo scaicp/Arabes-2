@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Arabe Sport</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+    <style>
+        /* Estilos específicos para la página de checkout */
+        .checkout-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .checkout-form {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-summary {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .cart-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        .cart-item-details {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .cart-item-info h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .cart-item-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .cart-item-price {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        .checkout-summary {
+            margin-top: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .summary-total {
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 10px;
+            margin-top: 10px;
+            border-top: 2px solid #333;
+        }
+
+        .btn-place-order {
+           
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+      
+
+        .payment-options {
+            margin: 20px 0;
+        }
+
+        .payment-option {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="menuContainer">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="../fotos/logo.png" alt="Logo"></a>
+                    <span>Arabe Sport</span>
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Buscar..." class="searchInput">
+                    <img src="../fotos/search.png" width="20" height="20" alt="Ícono de búsqueda" class="searchIcon">
+                </div>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#">Ropa</a>
+                        <ul class="dropdown">
+                            <li><a href="polos.html">T-shirt</a></li>
+                            <li><a href="pantalones.html">Pantalones</a></li>
+                            <li><a href="chaque.html">Chaquetas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gorras.html">Gorras</a></li>
+                    <li><a href="tenis.html">Tenis</a></li>
+                    <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li>
+                      <a href="#cart" class="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-form">
+            <h2>Finalizar Compra</h2>
+            <div class="form-group">
+                <label for="fullName">Nombre Completo:</label>
+                <input type="text" id="fullName" placeholder="Ingrese su nombre completo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" placeholder="Calle, número, colonia" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Ciudad:</label>
+                <input type="text" id="city" placeholder="Ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Número de Teléfono:</label>
+                <input type="tel" id="phone" placeholder="Ingrese su número de teléfono" required>
+            </div>
+            
+            <h2>Información de Pago</h2>
+            <div class="payment-options">
+                
+              <center><h4>Tarjeta de Crédito/Débito</h4></center> 
+                </label>
+              
+            </div>
+            
+            <div id="credit-card-form">
+                <div class="form-group">
+                    <label for="cardNumber">Número de Tarjeta:</label>
+                    <input type="text" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19">
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="expDate">Fecha de Vencimiento:</label>
+                        <input type="text" id="expDate" placeholder="MM/AA" maxlength="5">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" placeholder="XXX" maxlength="3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cart-summary">
+            <h2>Carrito de Compras</h2>
+            <div id="checkout-cart-items">
+                <!-- Los elementos del carrito se cargarán dinámicamente -->
+            </div>
+            
+            <div class="checkout-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="checkout-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Envío:</span>
+                    <span id="checkout-shipping">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Impuestos (18%):</span>
+                    <span id="checkout-tax">$0.00</span>
+                </div>
+                <div class="summary-row summary-total">
+                    <span>Total:</span>
+                    <span id="checkout-total">$0.00</span>
+                </div>
+            </div>
+            
+            <button class="btn-place-order" id="place-order"><a href="comprafi.html"></a>Confirmar Pedido</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Cargar el carrito desde localStorage
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            // Actualizar la vista del carrito en la página de checkout
+            updateCheckoutCart();
+            
+            // Manejar evento del botón de confirmar pedido
+            document.getElementById("place-order").addEventListener("click", function() {
+                if (validateForm()) {
+                    processOrder();
+                }
+            });
+            
+            // Manejar cambio en método de pago
+            document.querySelectorAll('input[name="payment"]').forEach(function(radio) {
+                radio.addEventListener('change', function() {
+                    const creditCardForm = document.getElementById('credit-card-form');
+                    if (this.value === 'credit') {
+                        creditCardForm.style.display = 'block';
+                    } else {
+                        creditCardForm.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Formato para número de tarjeta (separar en grupos de 4)
+            document.getElementById('cardNumber').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                value = value.replace(/(.{4})/g, '$1-').trim();
+                if (value.endsWith('-')) {
+                    value = value.slice(0, -1);
+                }
+                e.target.value = value;
+            });
+            
+            // Formato para fecha de vencimiento
+            document.getElementById('expDate').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 2) {
+                    value = value.slice(0, 2) + '/' + value.slice(2, 4);
+                }
+                e.target.value = value;
+            });
+        });
+        
+        // Actualizar la vista del carrito en la página de checkout
+        function updateCheckoutCart() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const cartItemsContainer = document.getElementById("checkout-cart-items");
+            
+            cartItemsContainer.innerHTML = "";
+            let subtotal = 0;
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "<p>No hay productos en el carrito</p>";
+                updateSummary(0);
+                return;
+            }
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                const cartItem = document.createElement("div");
+                cartItem.classList.add("cart-item");
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="cart-item-details">
+                        <div class="cart-item-info">
+                            <h3>${item.name}</h3>
+                            <p>Talla: ${item.size}</p>
+                            <p>Cantidad: ${item.quantity}</p>
+                        </div>
+                        <div class="cart-item-price">
+                            $${itemTotal.toFixed(2)}
+                        </div>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            
+            updateSummary(subtotal);
+        }
+        
+        // Actualizar los totales en el resumen de compra
+        function updateSummary(subtotal) {
+            const shipping = subtotal > 0 ? 5.00 : 0;
+            const tax = subtotal * 0.18;
+            const total = subtotal + shipping + tax;
+            
+            document.getElementById("checkout-subtotal").textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById("checkout-shipping").textContent = `$${shipping.toFixed(2)}`;
+            document.getElementById("checkout-tax").textContent = `$${tax.toFixed(2)}`;
+            document.getElementById("checkout-total").textContent = `$${total.toFixed(2)}`;
+        }
+        
+        // Validar formulario
+        function validateForm() {
+            const required = ["fullName", "email", "address", "city", "phone"];
+            let valid = true;
+            
+            required.forEach(id => {
+                const field = document.getElementById(id);
+                if (!field.value.trim()) {
+                    field.style.borderColor = "red";
+                    valid = false;
+                } else {
+                    field.style.borderColor = "#ddd";
+                }
+            });
+            
+            // Validación adicional para tarjeta de crédito
+            if (document.querySelector('input[name="payment"]:checked').value === 'credit') {
+                const cardFields = ["cardNumber", "expDate", "cvv"];
+                cardFields.forEach(id => {
+                    const field = document.getElementById(id);
+                    if (!field.value.trim()) {
+                        field.style.borderColor = "red";
+                        valid = false;
+                    } else {
+                        field.style.borderColor = "#ddd";
+                    }
+                });
+            }
+            
+            if (!valid) {
+                showToast("Por favor complete todos los campos requeridos");
+            }
+            
+            return valid;
+        }
+        
+        // Procesar el pedido
+        function processOrder() {
+            // Simular procesamiento de pago
+            showToast("Procesando su pedido...");
+            
+            setTimeout(() => {
+                // Limpiar carrito
+                localStorage.removeItem("cart");
+                
+                // Redirigir a página de confirmación
+                window.location.href = "comprafi.html";
+            }, 2000);
+        }
+        
+        // Función para mostrar notificaciones
+        function showToast(message) {
+            let toast = document.createElement("div");
+            toast.classList.add("toast");
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add("fade-out");
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+        
+    </script>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+<script>
+  // Tu objeto de configuración de Firebase (reemplaza con tus credenciales)
+  const firebaseConfig = {
+    apiKey: "TU_API_KEY",
+    authDomain: "TU_PROYECTO_ID.firebaseapp.com",
+    projectId: "TU_PROYECTO_ID",
+    storageBucket: "TU_PROYECTO_ID.appspot.com",
+    messagingSenderId: "TU_MENSAJE_SENDER_ID",
+    appId: "TU_APP_ID",
+    measurementId: "TU_MEASUREMENT_ID" // Opcional
+  };
+
+  // Inicializar Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Inicializar Firestore
+  const db = firebase.firestore();
+</script>
+
+
+<script src="../javas/java.js"></script>
+<script src="../javas/car.js"></script>
+<script src="../javas/login.js"></script>
+<script src="../javas/users.js"></script>
+</body>
+</html>

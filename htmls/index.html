@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inicio - Arabe Sport</title>
+  <link rel="stylesheet" href="../estilo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav id="nav">
+      <div class="menuContainer">
+        <div class="nav-logo">
+          <a href="index.html"><img src="../fotos/logo.png" alt="Logo" /></a>
+          <span>Arabe Sport</span>
+        </div>
+
+        <div class="search">
+          <input type="text" placeholder="Buscar..." class="searchInput" />
+          <img src="../fotos/search.png" width="20" height="20" alt="Ícono de búsqueda" class="searchIcon" />
+        </div>
+
+        <ul class="menu">
+          <li>
+            <a href="polos.html">Ropa</a>
+            <ul class="dropdown">
+              <li><a href="polos.html">T-shirt</a></li>
+              <li><a href="pantalones.html">Pantalones</a></li>
+              <li><a href="chaque.html">Chaquetas</a></li>
+            </ul>
+          </li>
+          <li><a href="gorras.html">Gorras</a></li>
+          <li><a href="tenis.html">Tenis</a></li>
+          <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+          <li id="user-menu-toggle" style="position: relative;">
+            <a href="#"><i class="fas fa-user"></i></a>
+            <div id="user-menu" style="display: none; position: absolute; right: 0; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); width: 220px; top: 30px; z-index: 10;">
+              <h4 style="margin: 0 0 10px 0;">👤 Mi Perfil</h4>
+              <p><strong>Nombre:</strong> <span id="user-name">Cargando...</span></p>
+              <p><strong>Email:</strong> <span id="user-email">Cargando...</span></p>
+              <p><strong>Fecha de Registro:</strong> <span id="user-date">Cargando...</span></p>
+              <button id="logout-btn" style="margin-top: 10px; background-color: #f44336; color: white; border: none; padding: 6px 12px; border-radius: 5px;">Cerrar sesión</button>
+            </div>
+          </li>
+          <li>
+            <a href="#cart" class="cart-toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+    </nav>
+    <div class="slider">
+        <div class="sliderWrapper">
+            <div class="sliderItem">
+                <img src="../fotos/Tenis/nikenegro.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">AIR FORCE</br> NEW</br> SEASON</h1>
+               
+                <a href="#product">
+                   
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="../fotos/Tenis/nikenegro.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+               
+                <a href="#product">
+              
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="../fotos/Tenis/marrones.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+               
+                <a href="#product">
+                  
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="../fotos/Tenis/nikenegro.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+               
+                <a href="#product">
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="../fotos/Tenis/marrones.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+               
+                <a href="#product">
+                </a>
+          
+            </div>
+        </div>
+    </div>
+
+
+
+    <section id="welcome" class="welcome-section">
+        <center> 
+            <h1 class="dynamic-text slide-in">¡Bienvenidos a Arabe Sport! <br>LA PARA DE LA ZONA SUR</h1>
+        </center>
+    
+        <div class="product slide-in" id="product">
+            <img id="productImg" src="../fotos/Tenis/marrones.png" alt="" class="productImg">
+            <div class="productDetails">
+                <h1 class="productTitle">AIR FORCE</h1>
+                <h2 class="productPrice">$199</h2>
+                <p class="productDesc">Un diseño icónico que combina estilo y comodidad para todas las ocasiones.</p>
+    
+                <div class="colors">
+                    <div class="color" style="background-color: black;" onclick="changeImage('./fotos/blancoynegro.png')"></div>
+                    <div class="color" style="background-color: red;" onclick="changeImage('./fotos/Rojos.png')"></div>
+                    <div class="color" style="background-color: green;" onclick="changeImage('./fotos/verdes.png')"></div>
+                    <div class="color" style="background-color: blue;" onclick="changeImage('./fotos/azules.png')"></div>
+                </div>
+    
+                <div class="sizes">
+                    <div class="size">42</div>
+                    <div class="size">43</div>
+                    <div class="size">44</div>
+                </div>
+                <button class="productButton">Comprar</button>
+            </div> 
+        </div>
+    </section>
+    
+
+           
+        </div>
+        <div class="gallery">
+            <div class="galleryItem">
+              <h1 class="galleryTitle">Be Yourself!</h1>
+              <video autoplay muted loop class="galleryVideo">
+                <source src="../fotos/flows/blanco.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </div>
+            <div class="galleryItem">
+              <video autoplay muted loop class="galleryVideo">
+                <source src="../fotos/flows/red.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <h1 class="galleryTitle">This is the First Day of Your New Life</h1>
+            </div>
+            <div class="galleryItem">
+              <h1 class="galleryTitle">Just Do it!</h1>
+              <video autoplay muted loop class="galleryVideo">
+                <source src="../fotos/flows/verde.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+
+
+          <section id="products" class="products-section">
+            <h2 class="products-title">Nuestros Productos</h2>
+            <div class="product-carousel-container">
+                <!-- Botón de flecha izquierda -->
+                <button class="scroll-btn left" onclick="scrollCarousel(-1)">&#8249;</button>
+                
+                <div class="product-carousel" id="product-carousel">
+                    <!-- Producto 1 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/Polos/polo3.jpg" alt="Tenis 1">
+                        </div>
+                        <div class="content-card-product">
+                        
+                            <h3>Tenis Modelo 1</h3>
+                            <p class="price">$100.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+        
+                    <!-- Producto 2 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/gorras/oct1.jpeg" alt="Tenis 2">
+                        </div>
+                        <div class="content-card-product">
+                        
+                            <h3>Tenis Modelo 2</h3>
+                            <p class="price">$120.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+        
+                    <!-- Producto 3 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/gorras/primera 2.jpeg" alt="Tenis 3">
+                        </div>
+                        <div class="content-card-product">
+                        
+                            <h3>Tenis Modelo 3</h3>
+                            <p class="price">$130.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+                      <!-- Producto 4 -->
+                      <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/Tenis/marrones.png" alt="Tenis 4">
+                        </div>
+                        <div class="content-card-product">
+        
+                            <h3>Tenis Modelo 4</h3>
+                            <p class="price">$110.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+
+                      <!-- Producto 5 -->
+                      <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/gorras/quinta1.jpeg" alt="Tenis 4">
+                        </div>
+                        <div class="content-card-product">
+                            <h3>Tenis Modelo 4</h3>
+                            <p class="price">$110.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+        
+                    <!-- Producto 6 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/Tenis/marrones.png" alt="Tenis 4">
+                        </div>
+                        <div class="content-card-product">
+                        
+                            <h3>Tenis Modelo 4</h3>
+                            <p class="price">$110.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+        
+                    <!-- Producto 7 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/Polos/polo1.jpg" alt="Tenis 5">
+                        </div>
+                        <div class="content-card-product">
+                          
+                            <h3>Tenis Modelo 5</h3>
+                            <p class="price">$140.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+                    
+        
+                    <!-- Producto 8 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="../fotos/gorras/cuarta1.jpeg" alt="Tenis 6">
+                        </div>
+                        <div class="content-card-product">
+                          
+                            <h3>Tenis Modelo 6</h3>
+                            <p class="price">$150.00</p>
+                            <button class="buy-now">Comprar Ahora</button>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+        
+                <!-- Botón de flecha derecha -->
+                <button class="scroll-btn right" onclick="scrollCarousel(1)">&#8250;</button>
+            </div>
+        </section>
+        
+        
+
+                <div class="features">
+                    <div class="feature">
+                        <img src="../fotos/shiping.png" alt="" class="featureIcon">
+                        <span class="featureTitle">Envio a todo el país</span>
+                        <span class="featureDesc">INFO</span>
+                    </div>
+            
+                    
+                    <div class="feature">
+                        <img class="featureIcon" src="../fotos/box.png" alt="">
+                        <span class="featureTitle">Ofertas</span>
+                        <span class="featureDesc">INFO</span>
+                    </div>
+                    <div class="feature">
+                        <img class="featureIcon" src="../fotos/cel.png" alt="">
+                        <span class="featureTitle">CONTACT US!</span>
+                        <span class="featureDesc">INFO</span>
+                    </div>
+                    </div>
+
+                    <footer class="footer">
+                        <div class="container">
+                            <div class="row">
+                                <!-- Mapa -->
+                                <div class="footer-col mapa">
+                                    <h4>Ubicación</h4>
+                                    <div class="map-container">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d181.59194287460062!2d-70.68692946328237!3d19.41657366604853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eb1cf0068cbd901%3A0xd50af869cc27e86b!2sArabe%20Sport!5e1!3m2!1ses-419!2sdo!4v1741652809121!5m2!1ses-419!2sdo"  
+                                            width="100%" height="200" allowfullscreen="" loading="lazy"></iframe>
+                                            
+                                            
+                                    </div>
+                                </div>
+                    
+                                <!-- Logo de la empresa al lado del mapa -->
+                                <div class="footer-col logo-empresa">
+                                    <img src="../fotos/logo.png" alt="Arabe Sport Logo" style="max-width: 150px; display: block; margin: 0 auto;">
+                                       <!-- Métodos de pago -->
+                            <div class="payment-methods">
+                                <h4>Métodos de Pago</h4>
+                                <div class="payment-icons">
+                                    <img src="../logo-paypal (1).png" alt="PayPal">
+                                    <img src="../mastercards.png" alt="Mercado Pago">
+                                    <img src="ruta/aplazo.png" alt="Aplazo">
+                                </div>
+                            </div>
+                                </div>
+                    
+                                <!-- Sobre Nosotros -->
+                                <div class="footer-col empresa">
+                                    <h4>Sobre Nosotros</h4>
+                                    <p>Somos una tienda especializada en ropa deportiva de alta calidad. En Arabe Sport encontrarás lo último en moda deportiva para acompañarte en cada entrenamiento y competencia.</p>
+                                    <a href="../htmls/massobrenosotros.html" class="btn-sobre-nosotros">Conoce Más</a>
+                                </div>
+                    
+                                <!-- Redes sociales -->
+                                <div class="footer-col social">
+                                    <h4>Síguenos</h4>
+                                    <div class="social-links">
+                                        <a href="https://wa.me/+8297201951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <a href="https://www.instagram.com/elarabesport_/"><i class="fab fa-instagram"></i></a>
+                                        <a href="https://www.tiktok.com/@elarabesport?_t=ZS-8u3IL4w6Hpv&_r=1"><i class="fab fa-tiktok"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <hr>
+                    
+                    
+                    
+                            <p class="footer-copy">- © 2025 Arabe Sport -</p>
+                        </div>
+                    </footer>
+
+  <!-- Scripts de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Script de autenticación y perfil -->
+  <script src="../javas/login.js"></script>
+  <script src="../javas/java.js"></script>
+  <script src="../javas/car.js"></script>
+  <script src="../javas/users.js"></script>
+</body>
+</html>

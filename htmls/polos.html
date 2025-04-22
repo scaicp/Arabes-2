@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T-shirt - Arabe Sport</title>
+  <link rel="stylesheet" href="../estilo.css" />
+
+  <script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav id="nav">
+      <div class="menuContainer">
+        <div class="nav-logo">
+          <a href="index.html"><img src="../fotos/logo.png" alt="Logo" /></a>
+          <span>Arabe Sport</span>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Buscar..." class="searchInput" />
+          <img src="../fotos/search.png" width="20" height="20" alt="Buscar" class="searchIcon" />
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="polos.html">Ropa</a>
+            <ul class="dropdown">
+              <li><a href="polos.html">T-shirt</a></li>
+              <li><a href="pantalones.html">Pantalones</a></li>
+              <li><a href="chaque.html">Chaquetas</a></li>
+            </ul>
+          </li>
+          <li><a href="gorras.html">Gorras</a></li>
+          <li><a href="tenis.html">Tenis</a></li>
+          <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+          <li><a href="#"><i class="fas fa-user"></i></a></li>
+          <li>
+            <a href="#cart" class="cart-toggle">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-badge">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+<!-- Contenedor de Productos -->
+<div class="product-container" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+  <!-- Producto 1 -->
+  <div class="card-product" 
+  data-id="polo1"
+  data-name="T-shirt Casablanca" 
+  data-price="$10.00" 
+  data-description="T-shirt Blanco de manga corta con un diseño único en la espalda estampado vibrante con el nombre CASABLANCA"
+  data-image="../fotos/Polos/polo1.jpg"
+  data-images="../fotos/Polos/polo1.jpg,../fotos/Polos/polo12.jpg">
+  
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo1.jpg" 
+        alt="Polo Blanco"
+        onmouseover="this.src='../fotos/Polos/polo12.jpg'" 
+        onmouseout="this.src='../fotos/Polos/polo1.jpg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt Casablanca</h3>
+
+   <p class="price">$10.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 2 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="T-shirt de manga blanca" 
+  data-price="$12.00" 
+  data-description="Presenta un estampado grande en el centro con una imagen de persona y la frase MADE XTREME."
+  data-image="../fotos/Polos/polo3.jpg"
+  data-images="../fotos/Polos/polo3.jpg,../fotos/Polos/polo34.jpg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo3.jpg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/Polos/polo34.jpg'" 
+        onmouseout="this.src='../fotos/Polos/polo3.jpg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt blanco</h3>
+  
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+<!-- Producto 3 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="T-shirts SAVIOR y Enjoy Social Director" 
+  data-price="$12.00" 
+  data-description="T-shirts de manga corta en un vibrante color azul, cada una con un diseño único y llamativo."
+  data-image="../fotos/Polos/polo7.jpg"
+  >
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo7.jpg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/Polos/polo7.jpg'" 
+        onmouseout="this.src='../fotos/Polos/polo7.jpg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirts SAVIOR y Enjoy Social Director</h3>
+
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- Producto 4 -->
+<div class="card-product" 
+  data-id="polo4"
+  data-name="Camiseta Palm Angels" 
+  data-price="$12.00" 
+  data-description="Tiene un estampado de un tiburón en color blanco en la parte trasera, capturando un estilo urbano y vanguardista."
+  data-image="../fotos/Polos/polo8.jpeg"
+  data-images="../fotos/Polos/polo8.jpeg,../fotos/Polos/polo89.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo8.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/Polos/polo89.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo8.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Camiseta Palm Angels</h3>
+ 
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Producto 5 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="Camiseta Amiri con Diseño Other Lives" 
+  data-price="$12.00" 
+  data-description="T-shirt con llamativo color mostaza, presentando el icónico logo de Amiri en letras grandes."
+  data-image="../fotos/Polos/polo6.jpeg"
+  data-images="../fotos/Polos/polo6.jpeg,../fotos/Polos/polo67.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo6.jpeg" 
+        alt="Camiseta Amiri con Diseño Other Lives"
+        onmouseover="this.src='../fotos/Polos/polo67.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo6.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Camiseta Amiri </h3>
+  
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- Producto 6 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="T-shirt INSPIRE y TRUTH" 
+  data-price="$12.00" 
+  data-description="T-shirt blancas de manga corta con diseños llamativos y distintivos con la palabra INSPIRE en letras grandes"
+  data-image="../fotos/Polos/polo5.jpg"
+  data-images="../fotos/Polos/polo5.jpg,../fotos/Polos/polo56.jpg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo5.jpg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/Polos/polo56.jpg'" 
+        onmouseout="this.src='../fotos/Polos/polo5.jpg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt INSPIRE y TRUTH</h3>
+
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 7 -->
+<div class="card-product" 
+  data-id="polo2"
+  data-name="T-shirt OLD GUARD y LETHAL" 
+  data-price="$12.00" 
+  data-description="Camiseta amarilla de manga corta con OLD GUARD al frente y LETHAL 88 con una rosa dorada y lista de ciudades en la espalda. Estilo urbano."
+  data-image="../fotos/Polos/polo10.jpeg"
+  data-images="../fotos/Polos/polo10.jpeg,../fotos/Polos/polo1011.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo10.jpeg" 
+        alt="Polo Negro"
+        onmouseover="this.src='../fotos/Polos/polo1011.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo10.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt OLD GUARD y LETHAL</h3>
+   <p class="price">$12.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+<!-- Producto 8 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt Cash Only con Chica Pin-Up" 
+  data-price="$15.00" 
+  data-description="Camiseta blanca con CASH ONLY, chica pin-up sobre una bola 8, y texto adicional. Estilo retro y urbano."
+  data-image="../fotos/Polos/polo12s.jpeg"
+  data-images="../fotos/Polos/polo12s.jpeg,../fotos/Polos/polo1213.jpeg">
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo12s.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo1213.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo12s.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shrit Cash Only con Chica Pin-Up</h3>
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Producto 9 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="T-shirt Travis Scott Rostro Metálico" 
+data-price="$15.00" 
+data-description="T-shrit gris con rostro metálico dorado/blanco. Diseño urbano y futurista."
+data-image="../fotos/Polos/polo14.jpeg"
+data-images="../fotos/Polos/polo14.jpeg,../fotos/Polos/polo1415.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+     src="../fotos/Polos/polo14.jpeg" 
+     alt="Polo Azul"
+     onmouseover="this.src='../fotos/Polos/polo1415.jpeg'" 
+     onmouseout="this.src='../fotos/Polos/polo14.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>T-shir Travis Scott Rostro Metálico</h3>
+
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 10 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="T-shirt Loewe con Logo Cuadrado" 
+data-price="$15.00" 
+data-description="T-shirt negra con logo Loewe en cuadrado amarillo/blanco. Diseño minimalista."
+data-image="../fotos/Polos/polo24.jpeg"
+data-images="../fotos/Polos/polo24.jpeg,../fotos/Polos/polo2425.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/Polos/polo24.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/Polos/polo2425.jpeg'" 
+  onmouseout="this.src='../fotos/Polos/polo24.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>T-shirt Loewe con Logo Cuadrado</h3>
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+<!-- Producto 11 -->
+<div class="card-product" 
+data-id="polo3"
+data-name=" T-shirt INSIDE SOUL" 
+data-price="$15.00" 
+data-description="T-shrit azul con estampado de rostro femenino fusionado con un cráneo, texto INSIDE SOUL y LETHAL CLOTH."
+data-image="../fotos/Polos/polo16.jpeg"
+data-images="../fotos/Polos/polo16.jpeg,../fotos/Polos/polo1617.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/Polos/polo16.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/Polos/polo1617.jpeg'" 
+  onmouseout="this.src='../fotos/Polos/polo16.jpeg'">
+</div>
+<div class="content-card-product">
+<h3> Camiseta "INSIDE SOUL"</h3>
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Producto 12 -->
+<div class="card-product" 
+data-id="polo3"
+data-name=" T-shirt RISE696" 
+data-price="$15.00" 
+data-description="T-shirt blanca con estampado RISE696, perro ladrando entre ladrillos y BAD TO MY WORLD. Diseño urbano."
+data-image="../fotos/Polos/polo26.jpeg"
+data-images="../fotos/Polos/polo26.jpeg,../fotos/Polos/polo2627.jpeg">
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/Polos/polo26.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/Polos/polo2627.jpeg'" 
+  onmouseout="this.src='../fotos/Polos/polo26.jpeg'">
+</div>
+<div class="content-card-product">
+<h3> T-shirt "RISE696" con Perro y Ladrillos</h3>
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Producto 13 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="T-shirt Enjoy Wonderful" 
+data-price="$15.00" 
+data-description="T-shirt azul con Enjoy y texto inspirador en la espalda. Al frente, Wonderful con detalles de marca y colección. Diseño urbano con tipografía llamativa."
+data-image="../fotos/Polos/polo20.jpeg"
+data-images="../fotos/Polos/polo20.jpeg,../fotos/Polos/polo2021.jpeg">
+
+<div class="container-img">
+<img class="hover-img" 
+  src="../fotos/Polos/polo20.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/Polos/polo2021.jpeg'" 
+  onmouseout="this.src='../fotos/Polos/polo20.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>T-shirt Enjoy Wonderful</h3>
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 14 -->
+<div class="card-product" 
+data-id="polo3"
+data-name="Polo Azul" 
+data-price="$15.00" 
+data-description="Polo azul con un diseño moderno y estilizado."
+data-image="../fotos/Polos/polo2627.jpeg"
+data-images="../fotos/Polos/polo2627.jpeg,../fotos/Polos/polo2627.jpeg">
+
+<div class="container-img"
+>
+<img class="hover-img" 
+  src="../fotos/Polos/polo26.jpeg" 
+  alt="Polo Azul"
+  onmouseover="this.src='../fotos/Polos/polo26.jpeg'" 
+  onmouseout="this.src='../fotos/Polos/polo2627.jpeg'">
+</div>
+<div class="content-card-product">
+<h3>Polo Azul</h3>
+<p class="price">$15.00</p>
+<button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Producto 15 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt Adán y BIGINNING" 
+  data-price="$15.00" 
+  data-description="T-shirt blanca con la pintura La creación de Adán de Miguel Ángel en el frente y la palabra BIGINNING en la espalda. Diseño artístico y llamativo."
+  data-image="../fotos/Polos/polo34.jpeg"
+  data-images="../fotos/Polos/polo34.jpeg,../fotos/Polos/polo34.jpeg">
+  
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo34.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo3435.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo34.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt Adán y BIGINNING</h3>
+   
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+
+
+<!-- Producto 16 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt LET'S GO! RACING" 
+  data-price="$15.00" 
+  data-description="T-shirt rojo con texto LET'S GO! RACING y hongo piloto en coche de carreras. Mensaje motivacional y diseño llamativo."
+  data-image="../fotos/Polos/polo36.jpeg"
+  data-images="../fotos/Polos/polo36.jpeg,../fotos/Polos/polo3637.jpeg">
+  
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo36.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo36.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo3637.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt LET'S GO! RACING</h3>
+
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 17 -->
+<div class="card-product" 
+  data-id="polo17"
+  data-name="T-shirt MOOD OFF" 
+  data-price="$15.00" 
+  data-description="T-shirt blanca con estampado de niño con gafas en el frente y texto MOOD OFF en la espalda. Diseño urbano con imagen llamativa y mensaje. "
+  data-image="../fotos/Polos/polo42.jpeg"
+  data-images="../fotos/Polos/polo42.jpeg,../fotos/Polos/polo4243.jpeg">
+  
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo42.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo42.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo4243.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt MOOD OFF</h3>
+  
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 18 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt DAILY STYLE " 
+  data-price="$15.00" 
+  data-description="T-shirt gris oscuro con cruz rosa en la espalda y texto DAILY STYLE en rosa al frente. Diseño urbano con tipografía llamativa"
+  data-image="../fotos/Polos/polo32.jpeg"
+  data-images="../fotos/Polos/polo32.jpeg,../fotos/Polos/polo3233.jpeg">
+  
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo32.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo32.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo3233.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt DAILY STYLE </h3>
+  
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 19 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="Taylor Gang con Graffiti y A$AP Rocky" 
+  data-price="$15.00" 
+  data-description="Taylor Gang con Graffiti y A$AP Rocky"
+  data-image="../fotos/Polos/polo30.jpeg"
+  data-images="../fotos/Polos/polo30.jpeg,../fotos/Polos/polo3031.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo30.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo3031.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo30.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>Taylor Gang con Graffiti y A$AP Rocky</h3>
+ 
+   <p class="price">$1,200</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+
+
+<!-- Producto 20 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt con Manos y Rostro de Niño" 
+  data-price="$15.00" 
+  data-description="T-shirt blanc con estampado de manos negras en la espalda y rostro de niño fumando en el frente. Diseño urbano con imágenes contrastantes.  "
+  data-image="../fotos/Polos/polo44.jpeg"
+  data-images="../fotos/Polos/polo44.jpeg,../fotos/Polos/polo4445.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo44.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo44.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo4445.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt con Manos y Rostro de Niño</h3>
+
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 21 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt STRENGTH" 
+  data-price="$15.00" 
+  data-description="T-shirt blanca con la palabra STRENGTH y un estampado del Maestro Roshi de Dragon Ball. Diseño urbano con referencia a la cultura pop."
+  data-image="../fotos/Polos/polo22.jpeg"
+  data-images="../fotos/Polos/polo22.jpeg,../fotos/Polos/polo2223.jpeg">
+  
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo22.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo2223.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo22.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt STRENGTH</h3>
+
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+<!-- Producto 22 -->
+<div class="card-product" 
+  data-id="polo3"
+  data-name="T-shirt REAL GOAT" 
+  data-price="$15.00" 
+   data-description="T-shirt negra con cabeza de cabra blanca y texto REAL GOAT en rojo. Diseño sencillo y llamativo."
+     data-image="../fotos/Polos/polo38.jpeg"
+     data-images="../fotos/Polos/polo38.jpeg,../fotos/Polos/polo3839.jpeg">
+
+<div class="container-img">
+   <img class="hover-img" 
+        src="../fotos/Polos/polo38.jpeg" 
+        alt="Polo Azul"
+        onmouseover="this.src='../fotos/Polos/polo38.jpeg'" 
+        onmouseout="this.src='../fotos/Polos/polo3839.jpeg'">
+</div>
+<div class="content-card-product">
+   <h3>T-shirt REAL GOAT</h3>
+ 
+   <p class="price">$15.00</p>
+   <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+   
+
+
+
+
+<!-- Producto 23  -->
+ <div class="card-product" 
+ data-id="polo1"
+ data-name="T-shirt BURNT OUT" 
+ data-price="$10.00" 
+ data-description="T-shirt verde con BURNT OUT, rostro central, texto adicional y BO en la espalda con Diseño urbano"
+ data-image="../fotos/Polos/polo40.jpeg"
+ data-images="../fotos/Polos/polo40.jpeg,../fotos/Polos/polo4041.jpeg">
+ 
+<div class="container-img">
+  <img class="hover-img" 
+       src="../fotos/Polos/polo40.jpeg" 
+       alt="Polo Blanco"
+       onmouseover="this.src='../fotos/Polos/polo4041.jpeg'" 
+       onmouseout="this.src='../fotos/Polos/polo40.jpeg'">
+</div>
+<div class="content-card-product">
+  <h3>T-shirt Casablanca</h3>
+
+  <p class="price">$10.00</p>
+  <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+</div>
+</div>
+
+
+    
+
+
+    
+<!-- Producto 24  -->
+
+<div class="card-product" 
+data-id="polo3"
+data-name="T-shirt BULLET" 
+data-price="$15.00" 
+data-description="T-shirt blanca con la palabra BULLET en letras negras sombreadas y un rostro borroso en tonos amarillos."
+data-image="../fotos/Polos/polo18.jpeg"
+data-images="../fotos/Polos/polo18.jpeg,../fotos/Polos/polo1819.jpeg">
+
+
+ <div class="container-img">
+    <img class="hover-img" 
+         src="../fotos/Polos/polo18.jpeg" 
+         alt="Polo Azul"
+         onmouseover="this.src='../fotos/Polos/polo1819.jpeg'" 
+         onmouseout="this.src='../fotos/Polos/polo18.jpeg'">
+ </div>
+ <div class="content-card-product">
+    <h3>T-shirt "BULLET"</h3>
+
+    <p class="price">$15.00</p>
+    <button class="buy-now" onclick="showProductDetailsWithCarousel(this)">Ver Detalles</button>
+   </div>
+ </div>
+  </div>
+
+
+
+
+
+
+  
+
+  <!-- Modal de Detalles -->
+  <section id="product-details" class="hidden" onclick="closeModal(event)">
+    <div class="details-container" onclick="event.stopPropagation();">
+      <button id="close-details" class="close-button">X</button>
+
+      <div class="details-image">
+        <div class="carousel-container">
+          <button class="carousel-button prev-button" onclick="moveCarousel(-1)">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel-track-container">
+            <div class="carousel-track" id="product-carousel"></div>
+          </div>
+
+          <button class="carousel-button next-button" onclick="moveCarousel(1)">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="carousel-nav" id="carousel-indicators"></div>
+      </div>
+
+      <div class="details-info">
+        <h2 id="details-name"></h2>
+        <p id="details-price"></p>
+        <p id="details-description" class="product-description"></p>
+        <div id="details-sizes">
+          <h4>Tamaños:</h4>
+          <div class="size-options">
+            <button class="size-button">S</button>
+            <button class="size-button">M</button>
+            <button class="size-button">L</button>
+            <button class="size-button">XL</button>
+          </div>
+        </div>
+        <button id="add-to-cart" class="add-to-cart-button">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript separado -->
+  <script src="../javas/carrusel.js"></script>
+  <script src="../javas/car.js"></script>
+</body>
+</html>

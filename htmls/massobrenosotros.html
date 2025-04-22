@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorras - Arabe Sport</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="menuContainer">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="../fotos/logo.png" alt="Logo"></a>
+                    <span>Arabe Sport</span>
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Buscar..." class="searchInput">
+                    <img src="../fotos/search.png" width="20" height="20" alt="Ícono de búsqueda" class="searchIcon">
+                </div>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#">Ropa</a>
+                        <ul class="dropdown">
+                            <li><a href="polos.html">T-shirt</a></li>
+                            <li><a href="pantalones.html">Pantalones</a></li>
+                            <li><a href="chaque.html">Chaquetas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gorras.html">Gorras</a></li>
+                    <li><a href="tenis.html">Tenis</a></li>
+                    <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li>
+                      <a href="#cart" class="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+  </nav>
+  
+ 
+      <!-- Cart Overlay -->
+      <div class="cart-overlay">
+        <div class="cart">
+            <div class="cart-header">
+                <h2>Carrito de Compras</h2>
+                <button class="cart-close">&times;</button>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <div class="cart-total-container">
+                    <span>Total:</span>
+                    <span class="cart-total">$0.00</span>
+                </div>
+                <button class="btn-checkout" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+  <!-- Modal de Detalles del Producto -->
+<section id="product-details" class="hidden" onclick="closeModal(event)">
+  <div class="details-container" onclick="event.stopPropagation();">
+      <button id="close-details" class="close-button" onclick="closeModal()">X</button>
+
+      <div class="details-image">
+          <img id="details-image" src="" alt="Imagen del producto">
+      </div>
+
+      <div class="details-info">
+          <h2 id="details-name"></h2>
+          <p id="details-price"></p>
+
+          <p id="details-description" class="product-description"></p>
+
+          <div id="details-sizes">
+              <h4>Tamaños:</h4>
+              <div class="size-options">
+                  <button class="size-button">S</button>
+                  <button class="size-button">M</button>
+                  <button class="size-button">L</button>
+                  <button class="size-button">XL</button>
+              </div>
+          </div>
+
+          <button id="add-to-cart" class="add-to-cart-button">Agregar al carrito</button>
+      </div>
+  </div>
+  
+</section>
+   
+  <section id="welcome" class="welcome-section">
+    <center> <h1 class="dynamic-text">¡Bienvenidos a Arabe Sport!</h1></center>
+     <center><p> En Arabe Sport, somos una tienda apasionada por el estilo y la autenticidad.<br>
+         Nos especializamos en ofrecer ropa moderna, polos de alta calidad, tenis icónicos y <br> gorras que destacan tu personalidad.</p> </center>
+ </section>
+
+
+
+
+
+<!-- Image and Scrolling Text Section -->
+<section class="image-text-section">
+    <!-- Large Image on the Left -->
+    <div class="large-image-container">
+        <img src="../fotos/todo/eje.png " alt="Arabe Sport Store">
+    </div>
+    
+    <!-- Scrolling Text on the Right -->
+    <div class="scrolling-text-container">
+        <h2>Nuestra Historia</h2>
+        
+        <div class="scrolling-text">
+            <p>Fundada en 2015, Arabe Sport nació de la pasión por combinar el estilo urbano con la comodidad y calidad que nuestros clientes merecen. A lo largo de los años, hemos crecido hasta convertirnos en una de las boutiques más reconocidas en la región, ofreciendo las mejores marcas y diseños exclusivos que satisfacen las expectativas de nuestros clientes más exigentes. Nuestra trayectoria ha estado marcada por un compromiso inquebrantable con la excelencia y la innovación constante en el mundo de la moda deportiva y urbana.</p>
+        </div>
+        
+        <div class="scrolling-text">
+            <p>En Arabe Sport no solo vendemos ropa y accesorios, creamos experiencias y ayudamos a nuestros clientes a expresar su estilo único a través de nuestras colecciones cuidadosamente seleccionadas. Nuestro equipo de profesionales apasionados trabaja diariamente para ofrecerte lo mejor en tendencias, calidad y servicio personalizado, creando un espacio donde cada cliente se siente valorado y encuentra exactamente lo que busca para complementar su estilo personal. Te invitamos a formar parte de nuestra comunidad y descubrir la diferencia que hace comprar en una boutique que entiende verdaderamente tus necesidades y gustos.</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<title>Sección Misión, Visión y Valores</title>
+</head>
+<body>
+   <section id="about" class="about-section">
+       <div class="cards-container">
+           <!-- Misión Card -->
+           <div class="card">
+               <div class="front">
+                   <div class="title-overlay">Misión</div>
+                   <img src="../fotos/mision.png" alt="Misión">
+               </div>
+               <div class="back">
+                   <p>Ser reconocidos como la boutique de referencia donde el cliente es lo primero, ofreciendo una experiencia de compra personalizada y memorable.</p>
+               </div>
+           </div>
+   
+           <!-- Visión Card -->
+           <div class="card">
+               <div class="front">
+                   <div class="title-overlay">Visión</div>
+                   <img src="../fotos/vision.png" alt="Visión">
+               </div>
+               <div class="back">
+                   <p>Expandir nuestra presencia a nivel nacional, abriendo nuevas sucursales para ofrecer nuestros productos y servicios a un mayor número de clientes.</p>
+               </div>
+           </div>
+   
+           <!-- Valores Card -->
+           <div class="card">
+               <div class="front">
+                   <div class="title-overlay">Valores</div>
+                   <img src="../fotos/valores.png" alt="Valores">
+               </div>
+               <div class="back">
+                   <p>Autenticidad, pasión, innovación constante, compromiso con la calidad y respeto por el individuo.</p>
+               </div>
+           </div>
+       </div>
+   </section>
+</div>
+
+<style>
+/* Estilos forzando las tarjetas en horizontal */
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    flex: 1;
+    position: relative;
+    width: 30%;
+    height: 300px;
+    perspective: 1000px;
+    margin: 0;
+    min-width: 200px;
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.title-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    z-index: 10;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Deshabilitando comportamiento responsivo */
+@media (max-width: 768px) {
+    .cards-container {
+        /* Mantener horizontal incluso en pantallas pequeñas */
+        flex-direction: row;
+        overflow-x: auto; /* Permitir desplazamiento horizontal en pantallas pequeñas */
+    }
+    
+    .card {
+        /* Mantener tamaño fijo */
+        flex-shrink: 0;
+    }
+}
+</style>
+
+<script src="../javas/java.js"></script>
+<script src="../javas/car.js"></script>
+<script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+</body>
+</html>

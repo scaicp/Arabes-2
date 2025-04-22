@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Pedido - Arabe Sport</title>
+    <link rel="stylesheet" href="../estilo.css">
+    <script src="https://kit.fontawesome.com/8d8812dfda.js" crossorigin="anonymous"></script>
+    <style>
+        .confirmation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .confirmation-icon {
+            font-size: 60px;
+            color: #1c4c02;
+            margin-bottom: 20px;
+        }
+        
+        .confirmation-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .confirmation-message {
+            font-size: 18px;
+            color: #000000;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .order-details {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .order-number {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .order-date, .order-email {
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .btn-continue {
+            background-color: #000000;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-continue:hover {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav">
+            <div class="menuContainer">
+                <div class="nav-logo">
+                    <a href="index.html"><img src="../fotos/logo.png" alt="Logo"></a>
+                    <span>Arabe Sport</span>
+                </div>
+
+                <div class="search">
+                    <input type="text" placeholder="Buscar..." class="searchInput">
+                    <img src="../fotos/search.png" width="20" height="20" alt="Ícono de búsqueda" class="searchIcon">
+                </div>
+
+                <ul class="menu">
+                    <li>
+                        <a href="#">Ropa</a>
+                        <ul class="dropdown">
+                            <li><a href="polos.html">T-shirt</a></li>
+                            <li><a href="pantalones.html">Pantalones</a></li>
+                            <li><a href="chaque.html">Chaquetas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gorras.html">Gorras</a></li>
+                    <li><a href="tenis.html">Tenis</a></li>
+                    <li><a href="massobrenosotros.html">¡Más Sobre Nosotros!</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                    <li>
+                      <a href="#cart" class="cart-toggle">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge">0</span>
+                      </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="confirmation-container">
+        <div class="confirmation-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <h1 class="confirmation-title">¡Pedido Confirmado!</h1>
+        <p class="confirmation-message">Gracias por tu compra. Hemos recibido tu pedido y lo estamos procesando. Recibirás un correo electrónico con los detalles de tu compra.</p>
+        
+        <div class="order-details">
+            <p class="order-number">Número de Pedido: <span id="order-id">AS-2025-</span></p>
+            <p class="order-date">Fecha: <span id="order-date"></span></p>
+            <p class="order-email">Se ha enviado un correo de confirmación a: <span id="order-email"></span></p>
+        </div>
+        
+        <a href="index.html" class="btn-continue">Continuar Comprando</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Generar un número de pedido aleatorio
+            const orderNumber = "AS-" + new Date().getFullYear() + "-" + Math.floor(10000 + Math.random() * 90000);
+            document.getElementById("order-id").textContent = orderNumber;
+            
+            // Mostrar la fecha actual
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date().toLocaleDateString('es-ES', options);
+            document.getElementById("order-date").textContent = today;
+            
+            // Recuperar el email del sessionStorage (si lo guardamos antes)
+            const email = sessionStorage.getItem("checkout-email") || "correo@ejemplo.com";
+            document.getElementById("order-email").textContent = email;
+            
+            // Actualizar el contador del carrito
+            document.querySelector(".cart-badge").textContent = "0";
+        });
+    </script>
+
+
+<!-- Agrega esto en tu HTML, justo antes de tu script -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA315DhY3uEPGtgkTQZ99LhdnTn9hT6t1Q",
+    authDomain: "login-27613.firebaseapp.com",
+    projectId: "login-27613",
+    storageBucket: "login-27613.appspot.com",
+    messagingSenderId: "503807303549",
+    appId: "1:503807303549:web:fa7056ec0112f3b1bef614",
+    measurementId: "G-Z4H192M277"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+
+
+
+
+
+<script src="../javas/java.js"></script>
+<script src="../javas/car.js"></script>
+<script src="../javas/login.js"></script>
+<script src="../javas/users.js"></script>
+</body>
+</html>
